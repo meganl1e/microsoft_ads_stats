@@ -83,8 +83,6 @@ if uploaded_files:
         
         # Download button
         csv = full_df.to_csv(index=False).encode('utf-8')
-
-
             st.download_button(
             "💾 Download Master CSV",
             csv,
@@ -93,4 +91,5 @@ if uploaded_files:
         )
     else:
         st.warning("No valid data found in files.")
+
 
