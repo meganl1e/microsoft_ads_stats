@@ -43,7 +43,7 @@ def identify_source(url):
     return 'Direct/Organic'
 
 # Streamlit UI
-st.title("🧹 UET CSV Cleaner")
+st.title("Microsoft Ads Stats")
 st.write("Upload one or more CSV files → Get cleaned master + reports")
 
 uploaded_files = st.file_uploader("Choose CSV files", accept_multiple_files=True, type='csv')
