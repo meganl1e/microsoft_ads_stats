@@ -25,11 +25,24 @@ def clean_and_load(file_content):
 
 def categorize_url(path):
     path = str(path).lower()
-    if path == '/' or path == '': return 'Home'
-    if '/products' in path: return 'Product'
-    if '/recipes' in path: return 'Recipe'
-    if '/blogs' in path: return 'Blog'
-    if '/cart' in path or 'checkout' in path: return 'Checkout/Cart'
+    if path == '/' or path == '':
+        return 'Home'
+    # Specific recipe subcategories (check these first)
+    if '/recipes/chicken-and-rice' in path:
+        return 'Chicken & Rice Recipe'
+    if '/recipes/portion-calculator' in path:
+        return 'Portion Calculator'
+    # Other top-level categories
+    if '/products' in path:
+        return 'Product'
+    if '/recipes' in path:
+        return 'Recipes'
+    if '/blogs' in path:
+        return 'Blog'
+    if '/about' in path:
+        return 'About'
+    if '/cart' in path or 'checkout' in path:
+        return 'Checkout/Cart'
     return 'Other'
 
 def identify_source(url):
